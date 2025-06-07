@@ -21,4 +21,4 @@ tempo1 = time.time()
 print(busca_bin([1,2,3,4,5,6,10,12,13,14,15,20,21,23,24,25],27))
 tempo2 = time.time()
 
-print(tempo2-tempo1)
+print("Algoritimo de busca binária possui tempo de execução = %.20f"%(tempo2-tempo1))
