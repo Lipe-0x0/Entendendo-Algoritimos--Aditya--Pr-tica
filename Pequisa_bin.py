@@ -29,7 +29,7 @@ def busca_bin_rec(array,valor, maior_ind, menor_ind = 0):
         
         if chute<valor:
             menor_ind_novo = meio_ind+1
-            return busca_bin_rec(array, valor,maior_ind, menor_ind_novo)
+            return busca_bin_rec(array, valor, maior_ind, menor_ind_novo)
 
 
 arra = [5,10,11,20,34,40,50]
