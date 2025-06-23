@@ -7,7 +7,6 @@ def fat(n):
     
 # Recursividade não costuma ser bom pois trabalha com pilhas e consequentemente consome muita mémoria
 
-print(fat(13))
 
 # Recursividade Soma
 def soma(arra):
@@ -16,7 +15,14 @@ def soma(arra):
     else: # Caso recursivo
         ultimo_elem = arra.pop(len(arra)-1) # Pega o ultimo elemento
         return ultimo_elem + soma(arra) # Soma o ultimo elemento com o array modificado
-    
-ar = [2,5,7]
 
-print(soma(ar))
+
+# Recursividade Contagem
+def contagem(array): 
+    cont = 1 # contador
+    if len(array)==1: # Caso base
+        return cont
+    else: # Caso recursivo
+        array.pop() # Modifica o array retirando um elemento
+        return cont + contagem(array) 
+    
