@@ -15,26 +15,22 @@ def busca_bin(array, valor):
     return -1
 
 # Pesquisa Binaria Recursiva
-def busca_bin_rec(array,valor):
-    menor_ind = 0
-    maior_ind = len(array)-1
+def busca_bin_rec(array,valor, maior_ind, menor_ind = 0):
     meio_ind = int((maior_ind+menor_ind)/2)
     chute = array[meio_ind]
 
-    if chute == valor:
-        print("achou")
+    if chute == valor: # Caso base
         return meio_ind
     
-    else:
+    else: # Caso recursivo
         if chute>valor:
-            print("chute>valor")
-            array.pop(maior_ind)
-            return busca_bin_rec(array, valor)
+            maior_ind_novo = meio_ind-1
+            return busca_bin_rec(array, valor, maior_ind_novo, menor_ind)
         
         if chute<valor:
-            print("chute<valor")
-            array.pop(menor_ind)
-            return busca_bin_rec(array, valor)
+            menor_ind_novo = meio_ind+1
+            return busca_bin_rec(array, valor,maior_ind, menor_ind_novo)
 
 
-print(busca_bin_rec([1,2,3,4,5],4))
+arra = [5,10,11,20,34,40,50]
+print(busca_bin_rec(arra,5, maior_ind=len(arra)-1))
