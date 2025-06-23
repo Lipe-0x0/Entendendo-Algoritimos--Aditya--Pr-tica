@@ -1,3 +1,4 @@
+# Pesquisa Binaria
 def busca_bin(array, valor):
     menor_ind = 0
     maior_ind = len(array)-1
@@ -13,12 +14,27 @@ def busca_bin(array, valor):
             menor_ind = meio_ind + 1
     return -1
 
-# Para verificação da eficácia, recomendo utilizar time.time
-# Ex:
-import time
+# Pesquisa Binaria Recursiva
+def busca_bin_rec(array,valor):
+    menor_ind = 0
+    maior_ind = len(array)-1
+    meio_ind = int((maior_ind+menor_ind)/2)
+    chute = array[meio_ind]
 
-tempo1 = time.time()
-print(busca_bin([1,2,3,4,5,6,10,12,13,14,15,20,21,23,24,25],27))
-tempo2 = time.time()
+    if chute == valor:
+        print("achou")
+        return meio_ind
+    
+    else:
+        if chute>valor:
+            print("chute>valor")
+            array.pop(maior_ind)
+            return busca_bin_rec(array, valor)
+        
+        if chute<valor:
+            print("chute<valor")
+            array.pop(menor_ind)
+            return busca_bin_rec(array, valor)
 
-print("Algoritimo de busca binária possui tempo de execução = %.20f"%(tempo2-tempo1))
+
+print(busca_bin_rec([1,2,3,4,5],4))
