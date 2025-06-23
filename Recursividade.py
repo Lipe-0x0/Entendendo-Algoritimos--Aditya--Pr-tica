@@ -6,4 +6,4 @@ def fat(n):
     
 # Recursividade não costuma ser bom pois trabalha com pilhas e consequentemente consome muita mémoria
 
-print(fat(10))
+print(fat(13))
